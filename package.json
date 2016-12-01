@@ -1,0 +1,27 @@
+{
+  "name": "webpack-huangkt",
+  "version": "1.0.0",
+  "description": "a simple webpack example..",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keyword": [
+    "webpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangketong/my-example.git"
+  },
+  "author": "huangketong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huangketong/my-example/issues"
+  },
+  "homepage": "https://github.com/huangketong/my-example#readme",
+  "devDependencies": {
+    "css-loader": "^0.26.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3"
+  }
+}
