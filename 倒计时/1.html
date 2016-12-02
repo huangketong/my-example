@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .mask {
+            background: #eee;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            z-index: 100;
+            filter: alpha(opacity=50);
+            /*IE滤镜，透明度50%*/
+            -moz-opacity: 0.5;
+            /*Firefox私有，透明度50%*/
+            opacity: 0.5;
+            /*其他，透明度50%*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <label for="">
+        这是一个下拉选择框:
+        <input list="browsers">
+    </label>
+    <datalist id="browsers">
+        <option value="chrome"></option>
+        <option value="Firefox"></option>
+        <option value="hhh"></option>
+        <option value="Opera"></option>
+        <option value="safari"></option>
+    </datalist>
+
+    <div>
+        <input type="button" id="btn" value="免费获取验证码">
+    </div>
+    <div class="mask"></div>
+    <script>
+        var waits = 10;
+
+        function settime(val) {
+            if (waits == 0) {
+                $('.mask').hide();
+                val.removeAttribute("disabled");
+                val.value = "免费获取验证码";
+                waits = 10;
+                return;
+            } else {
+                $('.mask').show();
+                val.setAttribute("disabled", true);
+                val.value = "重新发送(" + waits + ")";
+                waits--;
+            }
+            setTimeout(function() {
+                settime(val)
+            }, 1000)
+        }
+
+        $('#btn').click(function(e) {
+            settime(this);
+        });
+    </script>
+
+    <body>
+
+</html>
