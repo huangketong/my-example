@@ -1,28 +1,38 @@
 {
-    "name": "webpack-huangkt",
-    "version": "1.0.0",
-    "description": "a simple webpack example..",
-    "main": "bundle.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack"
-    },
-    "keyword": [
-        "webpack"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/huangketong/my-example.git"
-    },
-    "author": "huangketong",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/huangketong/my-example/issues"
-    },
-    "homepage": "https://github.com/huangketong/my-example#readme",
-    "devDependencies": {
-        "css-loader": "^0.26.0",
-        "style-loader": "^0.13.1",
-        "webpack": "^1.13.3"
-    }
+  "name": "webpack-huangkt",
+  "version": "1.0.0",
+  "description": "a simple webpack example..",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
+  },
+  "keyword": [
+    "webpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangketong/my-example.git"
+  },
+  "author": "huangketong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huangketong/my-example/issues"
+  },
+  "homepage": "https://github.com/huangketong/my-example#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.0",
+    "json-loader": "^0.5.4",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
 }
