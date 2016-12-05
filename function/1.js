@@ -26,3 +26,19 @@ for (var i = 0; i < elem.length; i++) {
         }
     })(i);
 }
+
+
+// 对象的深拷贝
+// Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。可以避免修改源对象
+var obj2 = {
+    name: "xiaoming",
+    age: 20
+};
+
+var newObj2 = Object.assign({}, obj2, { color: 'blue' });
+
+newObj2.name = 'zhangsan';
+
+console.log(obj2.name); //xiaoming
+console.log(newObj2.name); //zhangsan
+console.log(newObj2.color); //blue
