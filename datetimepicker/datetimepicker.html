@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../function/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="datetimepicker.css">
+    <script src="datetimepicker.js"></script>
+    <style>
+        .text {
+            width: 400px;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            /** 将对象作为伸缩盒子模型显示 **/
+            -webkit-box-orient: vertical;
+            /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+            -webkit-line-clamp: 3;
+            /** 显示的行数 **/
+            overflow: hidden;
+            /** 隐藏超出的内容 **/
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        这是一个HTML文件！第一个
+    </div>
+    <div class="text">
+        只是实验一下文本溢出，用省略号表示，只是实验一下文本溢出，用省略号表示只是实验一下文本溢出，用省略号表示只是实验一下文本溢出，用省略号表示
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">广告开始时间：</label>
+        <div class="col-sm-2">
+            <input type="text" id="date_timepicker_start" readonly pointer class="form-control date-picker" name="start_date" datatype="*1-50" errormsg="" placeholder="请输入广告开始时间">
+        </div>
+        <!--<div class="col-md-2">
+            <p class="help-block" id="start_date_msg">请选择广告开始时间</p>
+        </div>-->
+        <label class="col-sm-2 control-label">广告结束时间：</label>
+        <div class="col-sm-2">
+            <input type="text" id="date_timepicker_end" readonly pointer class="form-control date-picker" name="end_date" datatype="*1-50" errormsg="" placeholder="请输入广告结束时间">
+        </div>
+        <!--<div class="col-md-2">
+            <p class="help-block" id="end_date_msg">请选择广告结束时间</p>
+        </div>-->
+    </div>
+
+    <script>
+        $('#date_timepicker_start').datetimepicker({
+            lang: "ch", //语言选择中文
+            format: "Y-m-d", //格式化日期
+            onShow: function(ct) {
+                this.setOptions({
+                    maxDate: $('#date_timepicker_end').val() ? $('#date_timepicker_end').val() : false
+                });
+            },
+            timepicker: false, //关闭时间选项
+            // yearStart： 2000, //设置最小年份
+            // yearEnd: 2050, //设置最大年份
+            todayButton: false //关闭选择今天按钮
+        });
+        $('#date_timepicker_end').datetimepicker({
+            lang: "ch", //语言选择中文
+            format: "Y-m-d", //格式化日期
+            onShow: function(ct) {
+                this.setOptions({
+                    minDate: $('#date_timepicker_start').val() ? $('#date_timepicker_start').val() : false
+                });
+            },
+            timepicker: false, //关闭时间选项
+            // yearStart： 2000, //设置最小年份
+            // yearEnd: 2050, //设置最大年份
+            todayButton: false //关闭选择今天按钮
+        });
+    </script>
+</body>
+
+</html>
