@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors ${huangketong} (${email})
+ * @date    2016-09-12
+ * @version $Id$
+ */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+#page{
+	min-width: 1190px;
+}
+.page-content{
+	position: relative;
+	width: 1190px;
+	margin: 0 auto;
+}
+.p-img{
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+/* 左右箭头 */
+.icon-left,
+.icon-right{
+	display: block;
+	height: 30px;
+	width: 30px;
+	border: 4px solid #e4393c;
+	border-left: 0;
+	border-bottom: 0;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);		/* IE 9 */
+	-webkit-transform: rotate(45deg);	/* Safari and Chrome */
+	-o-transform: rotate(45deg);		/* Opera */
+	-moz-transform: rotate(45deg);		/* Firefox */
+}
+.icon-left{
+	transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);		/* IE 9 */
+	-webkit-transform: rotate(-135deg);	/* Safari and Chrome */
+	-o-transform: rotate(-135deg);		/* Opera */
+	-moz-transform: rotate(-135deg);		/* Firefox */
+}
+
+.p-left{
+	position: absolute;
+	top: 35%;
+	left: 0;
+	width: 50px;
+	height: 70px;
+	padding: 20px 0 0 18px; 
+}
+.p-right{
+	position: absolute;
+	top: 35%;
+	right: 0;
+	width: 50px;
+	height: 70px;
+	padding-top: 20px; 
+}
+.p-left:hover,
+.p-right:hover{
+	background: #ddd;
+}
+
+/* 原点列表 */
+.p-list ul{
+	margin: 0 auto;
+	text-align: center;
+}
+.p-list ul li{
+	list-style: none;
+	display: inline-block;
+	padding: 0 5px;
+}
+.p-list ul li b{
+	display: inline-block;
+	height: 16px;width: 16px;
+	border: 1px solid #e4393c;
+	border-radius: 8px;
+}
+.p-list ul li.active b{
+	background: #e4393c;
+}
+.p-list ul li b:hover{
+	cursor: pointer;
+	background: #e4393c;
+}
+
