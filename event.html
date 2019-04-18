@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+  <title>Document</title>
+  <style>
+    .parent {
+      height: 400px;
+      overflow: hidden;
+      border: 2px solid #dddddd;
+    }
+    .child, #childT {
+      width: 200px;
+      height: 50px;
+      margin: 0 auto;
+      background: #dddddd;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent" data-name="parent">
+
+    <div class="child" data-name="child1">child1</div>
+    <div class="child" data-name="child2">child2</div>
+    <div class="child" data-name="child3">child3</div>
+
+    <div id="childT" data-name="child4">child4</div>
+  </div>
+
+  <script>
+    console.log('load...')
+    $(document)
+      .on('click', '.parent', (e) => {
+        const name = $(e.target).data('name')
+        console.log('parent', name)
+      })
+      .on('click', '.child', (e) => {
+        e.stopPropagation();
+        const name = $(e.target).data('name')
+        console.log('child', name)
+        // 触发子元素的事件中，事件处理完成后，加一个return false,即可阻止父元素事件的触发
+        // return false;
+      })
+
+      document.getElementById('childT').addEventListener('click', (e) => {
+        window.event.cancelBubble = true; // 在原生事件中可以使用
+        const name = $(e.target).data('name')
+        console.log('child', name)
+      }, false)
+
+  </script>
+</body>
+</html>
