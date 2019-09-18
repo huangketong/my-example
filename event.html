@@ -32,6 +32,13 @@
     <div class="child" data-name="child3">child3</div>
 
     <div id="childT" data-name="child4">child4</div>
+    
+    <h2>事件委托</h2>
+    <ul id="ul">
+       <li>1</li>
+       <li>2</li>
+       <li>3</li>
+    </ul>
   </div>
 
   <script>
@@ -54,6 +61,15 @@
         const name = $(e.target).data('name')
         console.log('child', name)
       }, false)
+    
+    
+    document.getElementById('ul').addEventListener('click', function (e) {
+        console.log(e.target.tagName.toLowerCase());
+
+        if(e.target.tagName.toLowerCase() === 'li'){
+            console.log(e.target.innerHTML);
+        }
+    }, false);
 
   </script>
 </body>
